@@ -1,13 +1,13 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
 # For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
 
-name: Node.js Package
+name: Publish package nodejs
 
 on:
   push:
     branches: [ master ]
   pull_request:
-    branches: [ master ]
+    branches: [ develop ]
 
 jobs:
   build:
@@ -17,6 +17,19 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
+
+  coverage:
+    needs: [ test ]
+    runs-on: ubuntu-latest
+    steps:
+      with:
+        node-version: '12'
+    - run: npm install nyc -g
+    - uses: paambaati/codeclimate-action@v2.2.4
+      env:
+        CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+      with:
+        coverageCommand: nyc --reporter=lcov
 
   publish-npm:
     needs: build
