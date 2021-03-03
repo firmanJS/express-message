@@ -1,6 +1,5 @@
 # EXPRESS MESSAGE
 [![Maintainability](https://api.codeclimate.com/v1/badges/fa7ff692fc39eb14c1d4/maintainability)](https://codeclimate.com/github/firmanJS/express-message/maintainability) 
-Global message library for custom response and error handling
 ## Introduction
 
 express message is a library that was created to make it easier to write repetitive json responses, to avoid smiliar block of code

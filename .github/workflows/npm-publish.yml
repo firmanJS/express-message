@@ -18,29 +18,21 @@ jobs:
         with:
           node-version: 12
 
-  # coverage:
+  steps:
+  - name: Test & publish code coverage
+    uses: paambaati/codeclimate-action@v2.7.5
+    env:
+      CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
+
+  # publish-npm:
+  #   needs: build
   #   runs-on: ubuntu-latest
   #   steps:
   #     - uses: actions/checkout@v2
   #     - uses: actions/setup-node@v1
   #       with:
-  #         node-version: '12'
-  #   - run: npm install nyc -g
-  #   - uses: paambaati/codeclimate-action@v2.2.4
-  #     env:
-  #       CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
-  #     with:
-  #       coverageCommand: nyc --reporter=lcov
-
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-      - run: npm publish --access=public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
+  #         node-version: 12
+  #         registry-url: https://registry.npmjs.org/
+  #     - run: npm publish --access=public
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
