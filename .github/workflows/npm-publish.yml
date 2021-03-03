@@ -19,13 +19,12 @@ jobs:
           node-version: 12
 
   coverage:
-    needs: [ test ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      with:
-        node-version: '12'
+        with:
+          node-version: '12'
     - run: npm install nyc -g
     - uses: paambaati/codeclimate-action@v2.2.4
       env:
