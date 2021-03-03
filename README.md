@@ -10,7 +10,7 @@ express message is a library that was created to make it easier to write repetit
 ```sh
 $ npm install @codernoob/express-message
 ```
-
+### using as middleware
 ```js
 const { notFoundHandler, errorHandler } = require('@codernoob/express-message')
 
@@ -19,7 +19,20 @@ app.use(notFoundHandler)
 
 // using as middleware for error handler response
 app.use(notFoundHandler)
+```
+### using for pagination result
+```js
+const { getResponse } = require('@codernoob/express-message')
 
-//
+// using as middleware for not found response
+/**
+ *
+ *
+ * @param {*} req
+ * @param {*} res
+ * @param {*} data
+ */
+getResponse(request, response, data)
+
 ```
 
