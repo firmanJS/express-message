@@ -19,6 +19,7 @@ jobs:
           node-version: 12
 
   coverage-code:
+    runs-on: ubuntu-latest
     steps:
     - name: Test & publish code coverage
       uses: paambaati/codeclimate-action@v2.7.5
