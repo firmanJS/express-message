@@ -1,6 +1,6 @@
 {
   "name": "@codernoob/express-message",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "express message for globally",
   "main": "index.js",
   "homepage": "https://github.com/firmanJS/express-message",
