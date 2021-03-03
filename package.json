@@ -1,0 +1,20 @@
+{
+  "name": "express-message",
+  "version": "1.0.0",
+  "description": "express message for globally",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "message"
+  ],
+  "author": "firmanjs",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
