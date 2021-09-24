@@ -1,0 +1,11 @@
+.git*
+.travis*
+Makefile
+test/
+example/
+.DS_Store
+*.tmproj
+package-lock.json
+yarn.lock
+__test__
+coverage
