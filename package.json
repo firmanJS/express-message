@@ -1,5 +1,5 @@
 {
-  "name": "express-message",
+  "name": "@codernoob/express-message",
   "version": "1.0.4",
   "description": "express message for globally json result",
   "main": "index.js",
