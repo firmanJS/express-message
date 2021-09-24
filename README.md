@@ -1,39 +1,56 @@
 # EXPRESS MESSAGE
 [![Maintainability](https://api.codeclimate.com/v1/badges/fa7ff692fc39eb14c1d4/maintainability)](https://codeclimate.com/github/firmanJS/express-message/maintainability) 
+[![Test Coverage](https://api.codeclimate.com/v1/badges/fa7ff692fc39eb14c1d4/test_coverage)](https://codeclimate.com/github/firmanJS/express-message/test_coverage)
+[![Publish package nodejs](https://github.com/firmanJS/express-message/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/firmanJS/express-message/actions/workflows/npm-publish.yml)
 ## Introduction
 
-express message is a library that was created to make it easier to write repetitive json responses, to avoid smiliar block of code
-
+express message is a library that was created to make it easier to write repetitive json responses, to avoid smiliar block of code for your api
 
 ## Installation
 
 ```sh
-$ npm install @codernoob/express-message
+$ npm install express-message
 ```
 ### using as middleware
 ```js
-const { notFoundHandler, errorHandler } = require('@codernoob/express-message')
+const { notFoundHandler, errorHandler } = require('express-message')
 
 // using as middleware for not found response
 app.use(notFoundHandler)
 
 // using as middleware for error handler response
-app.use(notFoundHandler)
+app.use(errorHandler)
 ```
 ### using for pagination result
 ```js
-const { getResponse } = require('@codernoob/express-message')
-
-// using as middleware for not found response
+const { getResponse, successResponse, customResponse } = require('express-message')
 /**
  *
  *
- * @param {*} req
- * @param {*} res
+ * @param {*} request
+ * @param {*} response
  * @param {*} data
  */
 getResponse(request, response, data)
 
+/**
+ *
+ *
+ * @param {*} response
+ * @param {*} message
+ * @param {*} data
+ */
+successResponse(response, message, data)
+
+/**
+ *
+ *
+ * @param {*} response
+ * @param {integer} code
+ * @param {*} message
+ * @param {array} data
+ */
+customResponse(response, code, message, data)
 ```
 
 (The MIT License)
